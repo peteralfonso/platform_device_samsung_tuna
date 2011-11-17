@@ -79,6 +79,11 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
+# NXP blob necessary for tuna, and related open-source packages
+PRODUCT_COPY_FILES := \
+    device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+    packages/apps/Nfc/migrate_nfc.txt:/system/etc/updatecmds/migrate_nfc.txt
+
 # NFC
 PRODUCT_PACKAGES += \
         libnfc \
@@ -88,8 +93,13 @@ PRODUCT_PACKAGES += \
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
+        Galaxy4 \
+        HoloSpiralWallpaper \
         LiveWallpapers \
         LiveWallpapersPicker \
+        MagicSmokeWallpapers \
+        NoiseField \
+        PhaseBeam \
         VisualizationWallpapers \
         librs_jni
 
