@@ -80,7 +80,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
 # NXP blob necessary for tuna, and related open-source packages
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     packages/apps/Nfc/migrate_nfc.txt:/system/etc/updatecmds/migrate_nfc.txt
 
@@ -168,6 +168,7 @@ $(call inherit-product-if-exists, vendor/nxp/pn544/nxp-pn544-fw-vendor.mk)
 $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 $(call inherit-product-if-exists, vendor/ti/proprietary/omap4/ti-omap4-vendor.mk)
 $(call inherit-product-if-exists, vendor/samsung/tuna/device-vendor.mk)
+$(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
 
 BOARD_WLAN_DEVICE_REV := bcm4330_b2
 WIFI_BAND             := 802_11_ABG
