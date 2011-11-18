@@ -170,6 +170,4 @@ $(call inherit-product-if-exists, vendor/ti/proprietary/omap4/ti-omap4-vendor.mk
 $(call inherit-product-if-exists, vendor/samsung/tuna/device-vendor.mk)
 $(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
 
-BOARD_WLAN_DEVICE_REV := bcm4330_b2
-WIFI_BAND             := 802_11_ABG
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
