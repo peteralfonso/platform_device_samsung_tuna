@@ -71,9 +71,14 @@ endif
 PRODUCT_COPY_FILES += \
 	device/samsung/tuna/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
+# Build properties
 PRODUCT_PROPERTY_OVERRIDES := \
 	wifi.interface=wlan0 \
-	wifi.supplicant_scan_interval=15
+	wifi.supplicant_scan_interval=15 \
+	ro.opengles.version=131072 \
+	ro.sf.lcd_density=320 \
+	drm.service.enabled=true \
+	ro.com.google.mcc_fallback=262
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -134,12 +139,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/tuna/mms144_ts_rev31.fw:system/vendor/firmware/mms144_ts_rev31.fw \
     device/samsung/tuna/mms144_ts_rev32.fw:system/vendor/firmware/mms144_ts_rev32.fw
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version=131072
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=320
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
