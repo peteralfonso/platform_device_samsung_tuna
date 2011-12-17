@@ -80,7 +80,7 @@ static struct sensor_t sSensorList[LOCAL_SENSORS + MPLSensor::numSensors] = {
       { "GP2A Light sensor",
           "Sharp",
           1, SENSORS_LIGHT_HANDLE,
-          SENSOR_TYPE_LIGHT, 3000.0f, 1.0f, 0.75f, 0, { } },
+          SENSOR_TYPE_LIGHT, powf(10, 125.0f/ 24.0f) * 4, 1.0f, 0.75f, 0, { } },
       { "GP2A Proximity sensor",
           "Sharp",
           1, SENSORS_PROXIMITY_HANDLE,
@@ -302,7 +302,9 @@ int sensors_poll_context_t::pollEvents(sensors_event_t* data, int count)
             // anything to return
             int i;
 
-            n = poll(mPollFds, numFds, nbEvents ? 0 : polltime);
+            do {
+                n = poll(mPollFds, numFds, nbEvents ? 0 : polltime);
+            } while (n < 0 && errno == EINTR);
             if (n<0) {
                 LOGE("poll() failed (%s)", strerror(errno));
                 return -errno;
