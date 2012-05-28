@@ -200,3 +200,7 @@ $(call inherit-product-if-exists, vendor/samsung/tuna/device-vendor.mk)
 $(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+
+# vold
+PRODUCT_COPY_FILES += \
+	device/samsung/tuna/vold.fstab:/system/etc/vold.fstab
