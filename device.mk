@@ -77,9 +77,7 @@ PRODUCT_COPY_FILES += \
 # Build properties
 PRODUCT_PROPERTY_OVERRIDES := \
 	wifi.interface=wlan0 \
-	wifi.supplicant_scan_interval=15 \
-	drm.service.enabled=true \
-	ro.com.google.mcc_fallback=262
+	wifi.supplicant_scan_interval=15
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
