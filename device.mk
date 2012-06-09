@@ -83,6 +83,9 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
+# SIM Toolkit
+PRODUCT_PACKAGES += \
+    Stk
 
 # NFC
 PRODUCT_PACKAGES += \
